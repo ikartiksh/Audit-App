@@ -1,0 +1,11 @@
+# Dependencies
+node_modules
+
+# Vite build output
+dist
+
+# Environment files
+.env
+
+# Git files
+.git
