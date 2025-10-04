@@ -26,7 +26,7 @@ This project is distributed as a Docker container. You can run it on any machine
 Pull the latest image from the GitHub Container Registry:
 ```bash
 docker pull ghcr.io/ikartiksh/gsoc-proposal-reviewer:latest
-
+```
 ## 🛠️ Technology Stack
 Frontend: React, Vite
 
