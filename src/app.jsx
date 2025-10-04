@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './styles.css';
 
-// Import UI Components
 import Header from './components/header';
 import TipsSection from './components/tips';
 import FileInfo from './components/fileinfo';
@@ -11,7 +10,6 @@ import Timeline from './components/timeline';
 import DetailedFeedback from './components/feedback';
 import Footer from './components/footer';
 
-// Import Logic
 import { processProposal } from './services/process';
 
 function App() {

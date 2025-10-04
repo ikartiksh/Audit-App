@@ -2,19 +2,12 @@ import Cerebras from '@cerebras/cerebras_cloud_sdk';
 import * as pdfjsLib from 'pdfjs-dist/build/pdf';
 import 'pdfjs-dist/build/pdf.worker.min.mjs';
 
-// Initialize the official Cerebras client
 const client = new Cerebras({
   apiKey: import.meta.env.VITE_CEREBRAS_API_KEY,
 });
 
-// Use the model name from the documentation
 const MODEL_NAME = 'llama-4-scout-17b-16e-instruct';
 
-/**
- * Extracts text content from a PDF file.
- * @param {File} file The PDF file object.
- * @returns {Promise<string>} A promise that resolves to the text content of the PDF.
- */
 async function extractTextFromPdf(file) {
   const arrayBuffer = await file.arrayBuffer();
   const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
@@ -28,12 +21,6 @@ async function extractTextFromPdf(file) {
   return allText;
 }
 
-/**
- * A generic function to call the Cerebras API using the official SDK.
- * @param {string} system_prompt - The system instruction for the AI.
- * @param {string} user_prompt - The user's request.
- * @returns {Promise<string>} The text response from the AI.
- */
 async function callCerebrasAPI(system_prompt, user_prompt) {
     const completion = await client.chat.completions.create({
         model: MODEL_NAME,
@@ -47,9 +34,6 @@ async function callCerebrasAPI(system_prompt, user_prompt) {
     return completion.choices[0].message.content;
 }
 
-/**
- * Analyzes a proposal PDF to extract structured metrics.
- */
 export async function analyzeProposalMetrics(pdfFile, problemStatement) {
   const defaultMetrics = {
     technical_depth: 20, project_understanding: 20, timeline_clarity: 20, innovation_score: 20,
@@ -70,9 +54,6 @@ export async function analyzeProposalMetrics(pdfFile, problemStatement) {
   }
 }
 
-/**
- * Generates a prose review of the proposal.
- */
 export async function getAiReview(pdfFile, problemStatement, reviewerMode = false) {
   try {
     const proposalText = await extractTextFromPdf(pdfFile);
@@ -86,9 +67,6 @@ export async function getAiReview(pdfFile, problemStatement, reviewerMode = fals
   }
 }
 
-/**
- * Extracts the project timeline from a proposal PDF.
- */
 export async function extractProjectTimeline(pdfFile) {
   const noTimelineResult = { "No Timeline": "The proposal does not contain a clear timeline." };
   try {

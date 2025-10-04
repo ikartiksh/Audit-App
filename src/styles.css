@@ -7,7 +7,6 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* General App Styles */
 .main {
     background-color: #121212;
     color: #e0e0e0;
@@ -16,11 +15,10 @@ body {
 }
 
 .stApp {
-    max-width: 95%; /* This creates the "wide" layout */
+    max-width: 95%; 
     margin: 0 auto;
 }
 
-/* Header */
 .header-container {
     display: flex;
     align-items: center;
@@ -35,7 +33,6 @@ body {
     color: #e0e0e0;
 }
 
-/* Score Display */
 .score-display {
     font-size: 24px;
     font-weight: bold;
@@ -60,7 +57,6 @@ body {
     color: #f44336;
 }
 
-/* Metrics Cards */
 .metrics-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -88,7 +84,6 @@ body {
     color: #e0e0e0;
 }
 
-/* Key Points & Feedback */
 .key-points {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -114,7 +109,6 @@ body {
     color: #e0e0e0;
 }
 
-/* Timeline */
 .timeline {
     background-color: #1e1e1e;
     border-radius: 10px;
@@ -143,7 +137,6 @@ body {
     top: 15px;
 }
 
-/* Form Styles */
 form.feedback-box {
     display: flex;
     flex-direction: column;
@@ -160,7 +153,7 @@ form.feedback-box button {
     background-color: #333;
     color: #e0e0e0;
     font-size: 1rem;
-    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    box-sizing: border-box; 
 }
 
 form.feedback-box button {
