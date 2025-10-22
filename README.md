@@ -30,6 +30,8 @@ docker pull ghcr.io/ikartiksh/gsoc-proposal-reviewer:latest
 ## 🛠️ Technology Stack
 Frontend: React, Vite
 
+Core Backend: Node.js
+
 AI Backend: Cerebras API (Llama Models)
 
 PDF Processing: pdf.js
