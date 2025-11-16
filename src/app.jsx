@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import './styles.css';
 
 import Header from './components/header';
+import About from './components/about';
 import TipsSection from './components/tips';
 import FileInfo from './components/fileinfo';
 import MetricsDisplay from './components/metricsdisplay';
 import StrengthsWeaknesses from './components/analytical';
 import Timeline from './components/timeline';
 import DetailedFeedback from './components/feedback';
+import ExportOptions from './components/exportoptions';
 import Footer from './components/footer';
 
 import { processProposal } from './services/process';
@@ -48,9 +50,10 @@ function App() {
   return (
     <div className="main stApp">
       <Header />
+      <About />
       <TipsSection />
       
-      <form onSubmit={handleSubmit} className="feedback-box">
+      <form onSubmit={handleSubmit} className="feedback-box" id="analyze">
         <h2>Analyze a Proposal</h2>
         <textarea 
           name="problemStatement" 
@@ -65,9 +68,16 @@ function App() {
         </button>
       </form>
 
-      {isLoading && <progress value={progress} max="100" />}
-      {isLoading && <FileInfo uploadedFile={uploadedFile} />}
-      {error && <p style={{ color: '#f44336', textAlign: 'center' }}><strong>Error:</strong> {error}</p>}
+      {isLoading && <progress value={progress} max="100" className="main-progress-bar" />}
+      {isLoading && <FileInfo uploadedFile={uploadedFile} progress={progress} />}
+      {error && (
+        <div className="error-message">
+          <div className="error-icon">⚠️</div>
+          <div className="error-content">
+            <strong>Error:</strong> {error}
+          </div>
+        </div>
+      )}
 
       {analysisResults && (
         <div className="results-container" style={{marginTop: '2rem'}}>
@@ -75,6 +85,7 @@ function App() {
           <StrengthsWeaknesses metrics={analysisResults.metrics} />
           <Timeline timeline={analysisResults.timeline} />
           <DetailedFeedback feedback={analysisResults.feedback} />
+          <ExportOptions analysisResults={analysisResults} />
         </div>
       )}
       
