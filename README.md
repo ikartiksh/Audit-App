@@ -1,14 +1,14 @@
-# GSoC Proposal Reviewer 📝
+##  Real Project Reviewer
 
 
-An intelligent web application designed to analyze and provide detailed feedback on Google Summer of Code (GSoC) proposals. This tool leverages the Cerebras API with Llama models to evaluate proposals based on key metrics, identify strengths and weaknesses, and offer constructive advice. The entire application is containerized with Docker for easy deployment and use.
+An intelligent web application designed to analyze and provide detailed feedback on proposals. This tool leverages the Cerebras API with Llama models to evaluate proposals based on key metrics, identify strengths and weaknesses, and offer constructive advice. The entire application is containerized with Docker for easy deployment and use.
 
 
 
 ---
 ## Key Features ✨
 
-* **PDF Proposal Upload:** Easily upload GSoC proposals in PDF format.
+* **PDF Proposal Upload:** Easily upload proposals in PDF format.
 * **AI-Powered Metrics Analysis:** Get scores on crucial metrics like 
 **Technical Depth**, **Project Understanding**, and **Timeline Clarity**.
 * **Strengths & Weaknesses:** The AI identifies the top three strengths and areas for improvement in the proposal.
